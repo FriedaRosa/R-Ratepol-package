@@ -178,7 +178,8 @@ extract_data <-
       # save as dataframe
       age_un <- data.frame(age_uncertainty)
 
-      names(age_un) <- dat_age$sample_id
+      # names(age_un) <- dat_age$sample_id ### this does not work
+      names(age_un) <- row.names(dat_age) ### this works
     } else {
       age_un <- NULL
     }
